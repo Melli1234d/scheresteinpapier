@@ -1,44 +1,42 @@
 import './App.css';
 import ButtonItem from './components/ButtonItem/ButtonItem';
+import {FaRegHandScissors, FaRegHandRock, FaRegHandPaper} from "react-icons/fa";
+
 
 function App() {
 
+//Variable buttons, die in einem Array alle einzelnen Inhalte und alle Items beinhaltet (Schere Stein Papier mit jeweils einem Icon und einem Titel)
+//Andere beiden Buttons zum Element machen
     const buttons = [
-        {id: 'e1', icon:'FaRegHandScissors', title: 'Schere'},
-        {id: 'e2', icon:'FaRegHandRock', title: 'Stein'},
-        {id: 'e3', icon:'FaRegHandPaper', title: 'Papier'},
+        {id: 'e1', icon: <FaRegHandScissors size={50} color="white"/>, title: 'Schere'},
+        {id: 'e2', icon: <FaRegHandRock size={50} color="white"/>, title: 'Stein'},
+        {id: 'e3', icon: <FaRegHandPaper size={50} color="white"/>, title: 'Papier'},
     ];
 
 
-  return (
-    <div className="App">
-      <header className="App-header">
+//ButtonItem ist das jeweilige Item, was dann das icon und den titel von der Button Variable/ Array enthält.
+    return (
+        <div className="App">
+            <header className="App-header">
+                {buttons.map((button) =>
+                    <ButtonItem
+                        title={button.title}
+                        icon={button.icon}
+                    />
+                )}
+                <p>
+                    Spiele Schere Stein Papier mit einem Computer
+                </p>
 
-        <p>
-            Spiele Schere Stein Papier mit einem Computer
-        </p>
-          <ButtonItem
-              title={buttons[0].title}
-              icon={buttons[0].icon}
-          ></ButtonItem>
-          <ButtonItem
-              title={buttons[1].title}
-              icon={buttons[1].icon}
-          ></ButtonItem>
 
-          <ButtonItem
-              title={buttons[2].title}
-              icon={buttons[2].icon}
-          ></ButtonItem>
+                //Automatisches Icon vom Computer
+                <p> Computer spielte: Stein</p>
 
-          //Automatisches Icon vom Computer
-          <p> Computer spielte: Stein</p>
+                <p> Du hast gewonnen/verloren</p>
 
-          <p> Du hast gewonnen/verloren</p>
-
-      </header>
-    </div>
-  );
+            </header>
+        </div>
+    );
 }
 
 export default App;
