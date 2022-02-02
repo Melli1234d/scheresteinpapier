@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import ThreeButtons from './components/ThreeButtons/ThreeButtons';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            Spiele Schere Stein Papier mit einem computer
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          //Drei Auswahlmöglichkeiten (Schere,Stein,Papier)
+          <ThreeButtons/>
+        //Text, für was du dich entschieden hast
+          //Automatisches Icon vom Computer
+          <p> Computer spielte: Stein</p>
+
+          <p> Du hast gewonnen/verloren</p>
+
       </header>
     </div>
   );
