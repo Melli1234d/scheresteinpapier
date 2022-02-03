@@ -14,14 +14,14 @@ function ButtonItem({icon, title}) {
 
 
     return (
-        <div className="container-buttons">
+        <button className="container-buttons">
 
-
+        <div className="Ausrichtung_column">
             <div className="icon">{icon}</div>
             <div className="icon-title">{title}</div>
-
-
         </div>
+
+        </button>
     );
 }
 
