@@ -5,7 +5,7 @@ import React from "react";
 
 
 
-function ButtonItem({icon, title}) {
+function ButtonItem({icon, title, onPress}) {
     //Objekt mit Elementen/Variablen
     //erstelle Variablen um das Item dynamisch zu gestalten
     //Das Item enthält ein Icon und ein Titel
@@ -14,7 +14,7 @@ function ButtonItem({icon, title}) {
 
 
     return (
-        <button className="container-buttons">
+        <button onClick={()=>onPress()} className="container-buttons">
 
         <div className="Ausrichtung_column">
             <div className="icon">{icon}</div>
