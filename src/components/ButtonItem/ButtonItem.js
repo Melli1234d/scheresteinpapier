@@ -5,7 +5,7 @@ import React, {useState} from "react";
 
 
 
-function ButtonItem({icon, title, onPress}) {
+function ButtonItem({icon, title, onPress, gameCount}) {
     const [count, setCount] = useState(0);
     //Objekt mit Elementen/Variablen
     //erstelle Variablen um das Item dynamisch zu gestalten
