@@ -1,0 +1,24 @@
+.Ausrichtung_text{
+    flex-direction: row;
+    display: block;
+    padding: 3rem;
+    align-items: center;
+    margin: auto auto;
+    text-align: center;
+    align-content: center;
+}
+
+.Computer{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: block;
+    width: 20%;
+}
+.p{
+    width: 30rem;
+    text-align: center;
+    flex-direction: row;
+    display: block;
+}

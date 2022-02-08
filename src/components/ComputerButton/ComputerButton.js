@@ -8,7 +8,7 @@ function ComputerButtons({activeButton}){
     const [currentButton, setCurrentButton] = useState(activeButton);
 
     useEffect(() => {
-      
+
         // Update the document title using the browser API
         setCurrentButton(activeButton)
     },[activeButton]);
@@ -19,7 +19,8 @@ function ComputerButtons({activeButton}){
 
             <div>
                 <div className="container-buttons">
-                    <div className="Ausrichtung_column">
+                    <div className="Computer">
+                        <p className="p">Der Computer spielt:  {currentButton?.title}</p>
                         <div>{currentButton?.title}</div>
                         <div>{currentButton?.icon}</div>
 
