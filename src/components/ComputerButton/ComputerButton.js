@@ -16,7 +16,6 @@ function ComputerButtons({computerButton}){
             <div>
                 <div className="container-buttons">
                     <div className="Computer">
-                        
                         <p className="p">Der Computer spielt:  {currentButton?.title}</p>
                         <div className="currenticon">{currentButton?.icon}</div>
                         <div className="currenttitle">{currentButton?.title}</div>
