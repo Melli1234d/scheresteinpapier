@@ -6,7 +6,6 @@
     text-align: center;
     align-content: center;
 }
-
 .Computer{
     text-align: center;
     align-items: center;
@@ -14,10 +13,8 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-
 }
 .p{
-
     text-align: center;
     flex-direction: row;
     display: block;
