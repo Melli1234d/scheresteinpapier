@@ -20,6 +20,7 @@ function App() {
         setDraw(0);
         setLose(0);
         setComputerButton(undefined);
+        setCount(0);
     }
     // Funktion die bei jedem klick + eins machen soll (Anzahl der Spiele)
     const handleAmountGames = () => {
@@ -40,7 +41,7 @@ function App() {
     //bei jedem mal wenn es sich ändert aktualisiert und speichert er es
     useEffect(() => {
         if (userButton) {
-            returnResult()
+            scoreJudgement()
         }
     }, [userButton]);
 
@@ -96,9 +97,14 @@ function App() {
         Stein: 'Schere',
         Schere: 'Papier',
     };
+    function buttonClicked() {
+        let userButtonTitle = buttons.title //User
+        let computerButtonTitle = randomComputerButtons() //Computer Button beim draufklick random angezeigt
+        handleAmountGames(); //macht +1 bei gesamt Spiele
+        
+    }
 
-
-    function returnResult() {
+    function scoreJudgement() {
         console.log("User:", userButton?.title, "Computer", computerButton?.title,
             winCondition[userButton?.title]);
         if (userButton?.title === computerButton?.title) { //wenn user buttom gleich ist mit computer button ist unentschieden
@@ -121,8 +127,9 @@ function App() {
         <div className="App">
             <header className="App-header">
 
-
-                <p className="p-Ausrichtung">
+            <div className="div-untereinander">
+                <div className="spielrunden"> Spielrunden:<div className="count"> {count}</div> </div>
+                <div className="p-Ausrichtung">
                     <div className="du"> Du</div>
                     <div className="punktestand-win"> {won}</div>
                     <div className="trennstrich">-</div>
@@ -130,7 +137,9 @@ function App() {
                     <div className="computer">Computer</div>
                     <div className="unentschieden">| unentschieden</div>
                     <div className="punktestand-draw">{draw}</div>
-                </p>
+                </div>
+
+             </div>
                 <p>
                     Was wählst du?
                 </p>
@@ -138,11 +147,8 @@ function App() {
                     {buttons.map((button) =>
                         <ButtonItem
                             onPress={() => {
-                                let userButtonTitle = button.title //User
-                                let computerButtonTitle = //Computer Button beim draufklick random angezeigt
-                                    randomComputerButtons()
                                 setUserButton(button); //speichert den User Button
-                                handleAmountGames(); //macht +1 bei gesamt Spiele
+                                buttonClicked()
                             }}
                             title={button.title}
                             icon={button.icon}
